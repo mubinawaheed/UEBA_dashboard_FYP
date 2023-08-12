@@ -247,7 +247,7 @@ def plot_files_copied(user):
     Output('email_attachments', 'figure'),
     Input('users', 'value')
 )
-def plot_files_copied(user):
+def plot_email_attachments(user):
     df = pd.read_csv(
         f"E:\\UEBA_Notebooks\\no_of_email_attachments\\{user[0:7]}_attachments.csv")
     fig = plot_graph(df, 'date', 'attachments',

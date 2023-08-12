@@ -49,7 +49,12 @@ layout = dbc.Container([
             dbc.Col([
                 dcc.Graph(id='after_hour_emails', figure={}, style={"height": "400px", "margin-top": "-2px",'width':'895px', 'margin-left':'37px'})
             ])
-        ])
+        ]),
+    dbc.Row([
+        dbc.Col([
+                dcc.Graph(id='email_attachments', figure={}, style={"height": "400px", "margin-top": "-2px",'width':'895px', 'margin-left':'37px'})
+            ])
+    ])
     ], 
 style=CONTENT_STYLE)
 
@@ -76,7 +81,10 @@ def plot_graph(dataframe, xcol, ycol, title):
 
     return fig
 
-@callback(Output("emailgraph", "figure"), Input("users", "value"))
+@callback(
+Output("emailgraph", "figure"),
+ Input("users", "value"))
+
 def plot_email_graph(user):
     df = pd.read_csv(f"E:\\UEBA_Notebooks\\user_files\\{user}")
     df["date"] = pd.to_datetime(df["str_date"])
@@ -96,4 +104,16 @@ def after_hour_emails(user):
         f"E:\\UEBA_Notebooks\\after_hour_Email_userfiles\\{user[0:7]}_after_hour_emails.csv")
     fig = plot_graph(df, 'date', 'After_hour_emails',
                      f"Count of after hour emails sent by user {user[0:7]}")
+    return fig
+
+
+@callback(
+    Output('email_attachments', 'figure'),
+    Input('users', 'value')
+)
+def plot_email_attachments(user):
+    df = pd.read_csv(
+        f"E:\\UEBA_Notebooks\\no_of_email_attachments\\{user[0:7]}_attachments.csv")
+    fig = plot_graph(df, 'date', 'attachments',
+                     f"No of email attachments sent by user {user[0:7]} per day")
     return fig

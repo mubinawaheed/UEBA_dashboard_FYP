@@ -122,9 +122,9 @@ sidebar = html.Div(
                             active="exact", style=nav_style),
                 dbc.NavLink("Http Behavior", href="/http",
                             active="exact", style=nav_style),
-                dbc.NavLink("Device Behavior", href="/device",
+                dbc.NavLink("Device Behavior", href="/deviceBehavior",
                             active="exact", style=nav_style),
-                dbc.NavLink("Model Performance", href="/model_Performance",
+                dbc.NavLink("Dataset Insights", href="/dataset",
                             active="exact", style=nav_style)
             ],
             vertical=True,

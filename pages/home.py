@@ -15,7 +15,6 @@ CONTENT_STYLE = {
     "padding": "1rem",
     "margin-left": "16rem",
     "overflow": "hidden"
-
 }
 
 heading_style = {
@@ -26,103 +25,71 @@ heading_style = {
     "font-weight":"bold"
 }
 
-img_style_nu = {
-    'max-width': '115px',
-    'height': '131px',
-    'margin-top': '-34px',
-    'margin-left': '62px'
-}
-timerImg = {
-    'width': '137px',
-    'margin-bottom': '23px',
-    'margin-top': '-14px',
-    'margin-left': '47px'
+accuracy_graph1 = base64.b64encode(open('autoen_acc.png', 'rb').read()).decode('ascii')
+accuracy_graph2 = base64.b64encode(open('huber_loss.png', 'rb').read()).decode('ascii')
+
+graph_style1 = {
+    'height': '250px',
+    'width': '350px',
+    'marginLeft': "10px",
+    "marginTop": "15px"
 }
 
-normaluser = base64.b64encode(
-    open('assets\\normaluser.png', 'rb').read()).decode('ascii')
-mal_user = base64.b64encode(
-    open('assets\\mal_user.png', 'rb').read()).decode('ascii')
-timer = base64.b64encode(
-    open('assets\\timer.png', 'rb').read()).decode('ascii')
+graph_style2 = {
+    'height': '250px',
+    'width': '350px',
+    "marginTop": "15px"
+}
+caption_style={
+    'font-size': '13px',
+    'font-family': 'monospace',
+    'margin-left': '130px',
+}
 
+textstyle={
+    "font-family": "fangsong",
+     "font-size": "14px",
+    "color": "#444040",
+    "text-align": "justify",
+    "margin-top": "1px",
+}
 
 layout = dbc.Container(
     [
-        dbc.Row(
-            [dbc.Col(
-                [html.Div(html.H2("User and Entity Behaviour Analysis (UEBA)", style=heading_style, className="my-2 text-center")
-                          ), html.Hr(), ], xs=12, sm=12, md=12, lg=11, xl=11)]
-        ),
-        dbc.Row(
-            [dbc.Col([
-                (html.P("User and entity behavior analytics is a statistical approach to mitigate insider threats and discover malicious insiders within an \
-                organization. It monitors and analyzes user activities over a period of time and\
-                     detects anomalies and suspicious activities in the user behavior.",
-                        style={"font-family": "fangsong", "font-size": "14px", "color": "#444040", "text-align": "justify",
-                               "margin-top": "1px",
-                               },))
-            ], xs=12, sm=12, md=12, lg=11, xl=11,)
-            ]
-            # f1f9d0; #bac880
-        ),
-        dbc.Row([
-            dbc.Col([
-                html.H2("Dataset Insights",
-                        style=heading_style, className="my-2")
-            ])
-        ]),
-        dbc.Row([
-            dbc.Col([html.P("The dataset used in this research is Carnegie Mellon Univserity certified Insider Threat Dataset version r4.2",
-                            style={"font-family": "fangsong", "font-size": "14px", "color": "#444040", "text-align": "justify",
-                                   "margin-top": "1px", })])
-        ]),
-        dbc.Row([
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Malicious Insiders", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('70', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                            })),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(mal_user),
-                        alt="User Image",
-                        style=img_style_nu
-                    ),
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1}),
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Normal users", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('930', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                             })),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(normaluser),
-                        alt="User Image",
-                        style=img_style_nu
-                    ),
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4}),
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Timeline", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('18 months', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                                   })),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(timer),
-                        alt="timer Image",
-                        style=timerImg
-                    ),
+    dbc.Row(
+        [dbc.Col(
+            [html.Div(html.H2("User and Entity Behaviour Analysis (UEBA)", style=heading_style, className="my-2 text-center")
+            ), html.Hr(), ], xs=12, sm=12, md=12, lg=11, xl=11)]
+    ),
+    
+    dbc.Row(
+        [dbc.Col([
+            (html.P("User and entity behavior analytics is a statistical approach to mitigate insider threats and discover malicious insiders within an \
+            organization. It monitors and analyzes user activities over a period of time and\
+            detects anomalies and suspicious activities in the user behavior.", style=textstyle,))
+        ], xs=12, sm=12, md=12, lg=11, xl=11,)
+        ]
+    ),
 
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1}),
-        ],
-            style={'justify-content': 'center'}
-        ),
+    dbc.Row([
+        dbc.Col([
+            html.H4("Model Performance - 83% Accurate", style=heading_style, className="my-2 mx-2")
+        ])
+    ]),
 
+    dbc.Row([
+    dbc.Col(
+        [html.Figure([
+            html.Img(src='data:image/png;base64,{}'.format(accuracy_graph1), alt="Model Accuracy", style=graph_style1),
+            html.Figcaption("LSTM autoencoder", style=caption_style)]),
+        ], width=6),
 
+    dbc.Col(
+        [html.Figure([
+            html.Img(src='data:image/png;base64,{}'.format(accuracy_graph2), alt="Model Accuracy", style=graph_style2),
+            html.Figcaption("LSTM autoencoder",style=caption_style)]),
+        ], width=6),
+    ])
     ],
     # fluid=True,
     # className="g-0",

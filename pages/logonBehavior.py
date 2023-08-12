@@ -84,7 +84,7 @@ def plot_graph(dataframe, xcol, ycol, title):
     Output('Logon_Attempts', 'figure'),
     Input('users', 'value')
 )
-def plot_files_copied(user):
+def plot_logon_attempts(user):
     df = pd.read_csv(
         f"E:\\UEBA_Notebooks\\Logon Attempts all users\\{user[0:7]}_logonAttempts.csv")
     fig = plot_graph(df, 'date', 'Logon attempts',
