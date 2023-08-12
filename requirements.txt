@@ -1,0 +1,7 @@
+dash
+dash_bootstrap_components
+plotly_express
+pandas_datareader.data
+numpy
+pandas
+graph_objects
