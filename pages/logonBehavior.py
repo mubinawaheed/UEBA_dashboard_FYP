@@ -106,7 +106,6 @@ def plot_logon_attempts(user):
     Input("users", "value")
 )
 def plot_logon_graphs(user):
-    df = pd.read_csv(
-        f"E:\\UEBA_Notebooks\\after_hour_logon_userfiles\\{user[0:7]}_after_hour_logon.csv")
+    df = pd.read_csv(f"E:\\UEBA_Notebooks\\after_hour_logon_userfiles\\{user[0:7]}_after_hour_logon.csv")
     fig = plot_graph(df, 'date', 'after_hour_logon',f'Count of after hour Logons of user {user[0:7]}')
     return fig
