@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/")
 CONTENT_STYLE = {
     "margin-top": "-70px",
     "padding": "1rem",
-    "margin-left": "16rem",
+    "margin-left": "16.3rem",
     "overflow": "hidden"
 }
 
@@ -48,7 +48,7 @@ caption_style={
 
 textstyle={
     "font-family": "fangsong",
-     "font-size": "14px",
+    "font-size": "15px",
     "color": "#444040",
     "text-align": "justify",
     "margin-top": "1px",
@@ -59,15 +59,15 @@ layout = dbc.Container(
     dbc.Row(
         [dbc.Col(
             [html.Div(html.H2("User and Entity Behaviour Analysis (UEBA)", style=heading_style, className="my-2 text-center")
-            ), html.Hr(), ], xs=12, sm=12, md=12, lg=11, xl=11)]
+            ), html.Hr(), ], xs=11, sm=11, md=11, lg=10, xl=10)]
     ),
     
     dbc.Row(
         [dbc.Col([
             (html.P("User and entity behavior analytics is a statistical approach to mitigate insider threats and discover malicious insiders within an \
             organization. It monitors and analyzes user activities over a period of time and\
-            detects anomalies and suspicious activities in the user behavior.", style=textstyle,))
-        ], xs=12, sm=12, md=12, lg=11, xl=11,)
+            detects anomalies and suspicious activities in the user behavior.", className='mx-1', style=textstyle,))
+        ], xs=11, sm=11, md=11, lg=10, xl=10,)
         ]
     ),
 

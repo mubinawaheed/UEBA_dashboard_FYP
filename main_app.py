@@ -19,7 +19,7 @@ SIDEBAR_STYLE = {
     "top": 0,
     "left": 0,
     "bottom": 0,
-    "width": "16rem",
+    "width": "16.5rem",
     "padding": "2rem 1rem",
     "background-color": "rgb(233 249 255)",
     "color": "#000000",
@@ -41,7 +41,7 @@ nav_style = {
 }
 img_style = {
     'height': '200px',
-    'width': '200px',
+    'width': '212px',
     'margin-bottom': '-72px',
     'margin-top': '-69px'
 }

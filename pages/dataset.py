@@ -7,7 +7,7 @@ import base64
 dash.register_page(__name__, path='/dataset')
 
 CONTENT_STYLE = {
-    "margin-left": "16rem",
+    "margin-left": "17rem",
     "margin-right": "2rem",
     "padding": "1rem 1rem",
     "margin-top":"-62px"
@@ -25,7 +25,7 @@ img_style_nu = {
     'max-width': '115px',
     'height': '131px',
     'margin-top': '-34px',
-    'margin-left': '62px'
+    'margin-left': '50px'
 }
 timerImg = {
     'width': '137px',
@@ -35,7 +35,7 @@ timerImg = {
 }
 textstyle={
     "font-family": "fangsong",
-    "font-size": "16px",
+    "font-size": "16.5px",
     "color": "#444040",
     "text-align": "justify",
     "margin-top": "1px"
@@ -77,8 +77,8 @@ layout = dbc.Container([
                         alt="User Image",
                         style=img_style_nu
                     ),
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1},xs=4, sm=4),
+                ], style={"width": "13rem", 'margin-top': '10px'},
+                )], width={'size': 3}),
 
             dbc.Col([
                 dbc.Card([
@@ -90,8 +90,8 @@ layout = dbc.Container([
                         alt="User Image",
                         style=img_style_nu
                     ),
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4},xs=4, sm=4),
+                ], style={"width": "13rem",'margin-top': '10px'},
+                )], width={'size': 3}),
 
             dbc.Col([
                 dbc.Card([
@@ -104,11 +104,11 @@ layout = dbc.Container([
                         style=timerImg
                     ),
 
-                ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1}, xs=4, sm=4,),
+                ], style={"width": "13rem",'margin-top': '10px'},
+                )], width={'size': 3}),
 
             ],
-            style={'justify-content': 'center'}
+            # style={'justify-content': 'center'}
             ),
 
 
