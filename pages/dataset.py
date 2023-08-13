@@ -48,13 +48,9 @@ tagstyle={
     'text-align': 'center'
  }
 
-normaluser = base64.b64encode(
-    open('assets\\normaluser.png', 'rb').read()).decode('ascii')
-mal_user = base64.b64encode(
-    open('assets\\mal_user.png', 'rb').read()).decode('ascii')
-timer = base64.b64encode(
-    open('assets\\timer.png', 'rb').read()).decode('ascii')
-
+normaluser = base64.b64encode(open('assets\\normaluser.png', 'rb').read()).decode('ascii')
+mal_user = base64.b64encode(open('assets\\mal_user.png', 'rb').read()).decode('ascii')
+timer = base64.b64encode(open('assets\\timer.png', 'rb').read()).decode('ascii')
 
 layout = dbc.Container([
     dbc.Row(
@@ -67,49 +63,49 @@ layout = dbc.Container([
                         style=textstyle)], xs=12, sm=12, md=12, lg=11, xl=11,)
     ]),
     dbc.Row([
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Malicious Insiders", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('70', className="card-text", style=tagstyle)),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(mal_user),
-                        alt="User Image",
-                        style=img_style_nu
-                    ),
-                ], style={"width": "13rem", 'margin-top': '10px'},
-                )], width={'size': 3}),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardHeader(
+                    "Malicious Insiders", className='text-center', style={'font-size': '20px'}),
+                dbc.CardBody(html.P('70', className="card-text", style=tagstyle)),
+                html.Img(
+                    src='data:image/png;base64,{}'.format(mal_user),
+                    alt="User Image",
+                    style=img_style_nu
+                ),
+            ], style={"width": "13rem", 'margin-top': '10px'},
+            )], width={'size': 3}),
 
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Normal users", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('930', className="card-text", style=tagstyle)),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(normaluser),
-                        alt="User Image",
-                        style=img_style_nu
-                    ),
-                ], style={"width": "13rem",'margin-top': '10px'},
-                )], width={'size': 3}),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardHeader(
+                    "Normal users", className='text-center', style={'font-size': '20px'}),
+                dbc.CardBody(html.P('930', className="card-text", style=tagstyle)),
+                html.Img(
+                    src='data:image/png;base64,{}'.format(normaluser),
+                    alt="User Image",
+                    style=img_style_nu
+                ),
+            ], style={"width": "13rem",'margin-top': '10px'},
+            )], width={'size': 3}),
 
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardHeader(
-                        "Timeline", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('18 months', className="card-text", style=tagstyle)),
-                    html.Img(
-                        src='data:image/png;base64,{}'.format(timer),
-                        alt="timer Image",
-                        style=timerImg
-                    ),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardHeader(
+                    "Timeline", className='text-center', style={'font-size': '20px'}),
+                dbc.CardBody(html.P('18 months', className="card-text", style=tagstyle)),
+                html.Img(
+                    src='data:image/png;base64,{}'.format(timer),
+                    alt="timer Image",
+                    style=timerImg
+                ),
 
-                ], style={"width": "13rem",'margin-top': '10px'},
-                )], width={'size': 3}),
+            ], style={"width": "13rem",'margin-top': '10px'},
+            )], width={'size': 3}),
 
-            ],
-            # style={'justify-content': 'center'}
-            ),
+        ],
+        # style={'justify-content': 'center'}
+        ),
 
 
 ], style=CONTENT_STYLE)

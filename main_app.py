@@ -64,7 +64,7 @@ sidebar = html.Div(
                             active="exact", style=nav_style),
                 dbc.NavLink("File Behavior", href="/fileBehavior",
                             active="exact", style=nav_style),
-                dbc.NavLink("Http Behavior", href="/http",
+                dbc.NavLink("Http Behavior", href="/httpBehavior",
                             active="exact", style=nav_style),
                 dbc.NavLink("Device Behavior", href="/deviceBehavior",
                             active="exact", style=nav_style),
