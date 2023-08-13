@@ -6,7 +6,7 @@ import base64,os
 import pandas as pd
 import datetime
 
-dash.register_page(__name__, path='/deviceBehavior')
+dash.register_page(__name__, path='/fileBehavior')
 
 usernames = os.listdir("E:\\UEBA_Notebooks\\user_files")
 
@@ -24,23 +24,24 @@ Headingstyle={
     'color':'#2f71b2'
 }
 
-optionStyle={
-    "width": "550px",
-    "display": "inline-block",
-    "margin-left":"60px"
-}
-
 graphstyle={
     "height": "420px",
     'width':'820px',
     'margin-left':'50px'
 }
 
+optionStyle={
+    "width": "550px",
+    "display": "inline-block",
+    "margin-left":"60px"
+}
+
+
 layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
-            html.H2("Device Analysis", style=Headingstyle)
+            html.H2("Files Analysis", style=Headingstyle)
         ])
     ]),
 
@@ -56,7 +57,7 @@ layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
-            dcc.Graph(id='connect_graph', figure={}, style=graphstyle)
+            dcc.Graph(id='files_copied', figure={}, style=graphstyle)
         ]),
     ]),
 
@@ -74,26 +75,26 @@ def plot_graph(dataframe, xcol, ycol, title):
         dataframe['date'] = dates
         dataframe[ycol] = 0
 
-    fig = px.bar(dataframe, x="date", y=ycol, range_x=[dataframe["date"].min(), dataframe["date"].max()])
-    
-    fig.update_layout(title={'text': title, 'y': 0.9}, title_x=0.5, font=dict(size=10))
-
+    fig = px.bar(dataframe, x="date", y=ycol, range_x=[
+                 dataframe["date"].min(), dataframe["date"].max()])
+    fig.update_layout(title={'text': title, 'y': 0.9},
+                      title_x=0.5, font=dict(size=10))
     fig.update_traces(marker_color='#3E6DE3')
-
-    fig.update_yaxes(title_standoff=0)
-
+    fig.update_yaxes(
+        title_standoff=0)
     if dataframe[ycol].sum() == 0:
         fig.update_traces(marker_line_color='#3E6DE3', marker_line_width=4)
 
     return fig
 
+
 @callback(
-    Output("connect_graph", "figure"),
-    Input("users", "value")
+    Output('files_copied', 'figure'),
+    Input('users', 'value')
 )
-def plot_connect_graphs(user):
-    df = pd.read_csv(f"E:\\UEBA_Notebooks\\user_files\\{user}")
-    fig = plot_graph(df, 'str_date', 'Connect', 'Count of USB connects')
+def plot_files_copied(user):
+    df = pd.read_csv(
+        f"E:\\UEBA_Notebooks\\files_copied_userfiles\\file_features_{user[0:7]}.csv")
+    fig = plot_graph(df, 'str_date', 'files_copied',
+                     f"Count of files copied per day by user {user[0:7]}")
     return fig
-
-

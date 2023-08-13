@@ -10,63 +10,7 @@ import pandas_datareader.data as web
 import datetime
 import base64
 
-# app=dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP],
-#         meta_tags=[{'name':'viewport','content':'width=device-width, initial-scale:1.0'}])
-
-
-# SIDEBAR_STYLE = {
-#     "position": "fixed",
-#     "top": 0,
-#     "left": 0,
-#     "bottom": 0,
-#     "width": "14rem",
-#     "padding": "2rem 1rem",
-#     "background-color": "#f8f9fa",
-# }
-# CONTENT_STYLE = {
-#     "margin-left": "18rem",
-#     "margin-right": "2rem",
-#     "padding": "2rem 1rem",
-# }
-# sidebar = html.Div(
-#     [
-#         html.H2("UEBA", className="display-4"),
-#         html.Hr(),
-#         dbc.Nav(
-#             [
-#                 dbc.NavLink("Home", href="/home", active="exact"),
-#                 dbc.NavLink("Analytics Dashboard", href="/user_analytics", active="exact"),
-#                 dbc.NavLink("Prediction Accuracy", href="/prediction_Accuracy", active="exact"),
-#                 dbc.NavLink("Data", href="/data", active="exact"),
-#             ],
-#             vertical=True,
-#             pills=True,
-#         ),
-#     ],
-#     style=SIDEBAR_STYLE,
-# )
-
-# app.layout=html.Div([
-#     html.Div([
-#         dcc.Link(children=page['name']+" | ", href=page['path'])
-#         for page in dash.page_registry.values()
-#     ]),
-#     dash.page_container
-#     ]
-# )
-
-
-# # app.layout=html.Div([
-# #     dash.page_container
-# #     ]
-# # )
-
-# if __name__=='__main__':
-#     app.run_server(debug=True,port=3000)
-
-
-app = dash.Dash(__name__, use_pages=True,
-                external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 
 # styling the sidebar
@@ -104,9 +48,9 @@ img_style = {
 
 
 logo = base64.b64encode(open('assets\\logo.png', 'rb').read()).decode('ascii')
+
 sidebar = html.Div(
     [
-        # html.H2("UEBA", className="display-4", style={"font-weight": "bold"}),
         html.Img(src='data:image/png;base64,{}'.format(logo),
                  alt="logo", style=img_style),
         html.Hr(),
@@ -118,7 +62,7 @@ sidebar = html.Div(
                             active="exact", style=nav_style),
                 dbc.NavLink("Logon Behavior", href="/logonBehavior",
                             active="exact", style=nav_style),
-                dbc.NavLink("File Behavior", href="/file",
+                dbc.NavLink("File Behavior", href="/fileBehavior",
                             active="exact", style=nav_style),
                 dbc.NavLink("Http Behavior", href="/http",
                             active="exact", style=nav_style),

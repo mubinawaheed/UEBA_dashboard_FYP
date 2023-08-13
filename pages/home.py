@@ -91,7 +91,5 @@ layout = dbc.Container(
         ], width=6),
     ])
     ],
-    # fluid=True,
-    # className="g-0",
     style=CONTENT_STYLE,
 )
