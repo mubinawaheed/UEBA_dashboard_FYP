@@ -34,9 +34,9 @@ CONTENT_STYLE = {
 }
 
 nav_style = {
-    "font-family": "monospace",
+    "font-family": "fangsong",
     "line-height": "inherit",
-    "font-size": "15px",
+    "font-size": "16px",
     "color": "black"
 }
 img_style = {

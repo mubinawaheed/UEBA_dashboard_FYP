@@ -25,8 +25,8 @@ Headingstyle={
 }
 
 graphstyle={
-    "height": "420px",
-    'width':'820px',
+    "height": "440px",
+    'width':'920px',
     'margin-left':'50px'
 }
 
@@ -75,13 +75,12 @@ def plot_graph(dataframe, xcol, ycol, title):
         dataframe['date'] = dates
         dataframe[ycol] = 0
 
-    fig = px.bar(dataframe, x="date", y=ycol, range_x=[
-                 dataframe["date"].min(), dataframe["date"].max()])
-    fig.update_layout(title={'text': title, 'y': 0.9},
-                      title_x=0.5, font=dict(size=10))
+    fig = px.bar(dataframe, x="date", y=ycol, range_x=[dataframe["date"].min(), dataframe["date"].max()])
+    fig.update_layout(title={'text': title, 'y': 0.9},title_x=0.5, font=dict(size=10))
+
     fig.update_traces(marker_color='#3E6DE3')
-    fig.update_yaxes(
-        title_standoff=0)
+    fig.update_yaxes(title_standoff=0)
+
     if dataframe[ycol].sum() == 0:
         fig.update_traces(marker_line_color='#3E6DE3', marker_line_width=4)
 
@@ -93,8 +92,6 @@ def plot_graph(dataframe, xcol, ycol, title):
     Input('users', 'value')
 )
 def plot_files_copied(user):
-    df = pd.read_csv(
-        f"E:\\UEBA_Notebooks\\files_copied_userfiles\\file_features_{user[0:7]}.csv")
-    fig = plot_graph(df, 'str_date', 'files_copied',
-                     f"Count of files copied per day by user {user[0:7]}")
+    df = pd.read_csv(f"E:\\UEBA_Notebooks\\files_copied_userfiles\\file_features_{user[0:7]}.csv")
+    fig = plot_graph(df, 'str_date', 'files_copied',f"Count of files copied per day by user {user[0:7]}")
     return fig

@@ -31,8 +31,8 @@ optionStyle={
 }
 
 graphstyle={
-    "height": "420px",
-    'width':'820px',
+    "height": "440px",
+    'width':'920px',
     'margin-left':'50px'
 }
 

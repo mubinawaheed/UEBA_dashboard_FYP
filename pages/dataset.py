@@ -35,11 +35,18 @@ timerImg = {
 }
 textstyle={
     "font-family": "fangsong",
-    "font-size": "15px",
+    "font-size": "16px",
     "color": "#444040",
     "text-align": "justify",
     "margin-top": "1px"
 }
+
+tagstyle={
+    'color': '#3b6cc5',
+    'font-size': '30px',
+    'font-weight': 'bold',
+    'text-align': 'center'
+ }
 
 normaluser = base64.b64encode(
     open('assets\\normaluser.png', 'rb').read()).decode('ascii')
@@ -53,47 +60,44 @@ layout = dbc.Container([
     dbc.Row(
         [dbc.Col(
             [html.Div(html.H2("Dataset Insights", style=heading_style, className="text-center my-2")),
-             html.Hr(), ], xs=12, sm=12, md=12, lg=11, xl=11)]),
+             html.Hr(), ], xs=10, sm=10, md=10, lg=10, xl=10)]),
 
     dbc.Row([
         dbc.Col([html.P(["The dataset used in this research is ", html.Strong(" Carnegie Mellon Univserity "), "certified Insider Threat Dataset version r4.2"],
-                        style=textstyle)])
+                        style=textstyle)], xs=12, sm=12, md=12, lg=11, xl=11,)
     ]),
     dbc.Row([
             dbc.Col([
                 dbc.Card([
                     dbc.CardHeader(
                         "Malicious Insiders", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('70', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                            })),
+                    dbc.CardBody(html.P('70', className="card-text", style=tagstyle)),
                     html.Img(
                         src='data:image/png;base64,{}'.format(mal_user),
                         alt="User Image",
                         style=img_style_nu
                     ),
                 ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1}),
+                )], width={'size': 4, 'order': 1},xs=4, sm=4),
 
             dbc.Col([
                 dbc.Card([
                     dbc.CardHeader(
                         "Normal users", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('930', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                             })),
+                    dbc.CardBody(html.P('930', className="card-text", style=tagstyle)),
                     html.Img(
                         src='data:image/png;base64,{}'.format(normaluser),
                         alt="User Image",
                         style=img_style_nu
                     ),
                 ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4}),
+                )], width={'size': 4},xs=4, sm=4),
 
             dbc.Col([
                 dbc.Card([
                     dbc.CardHeader(
                         "Timeline", className='text-center', style={'font-size': '20px'}),
-                    dbc.CardBody(html.P('18 months', className="card-text", style={'color': '#3b6cc5', 'font-size': '30px', 'font-weight': 'bold', 'text-align': 'center'
-                                                                                   })),
+                    dbc.CardBody(html.P('18 months', className="card-text", style=tagstyle)),
                     html.Img(
                         src='data:image/png;base64,{}'.format(timer),
                         alt="timer Image",
@@ -101,7 +105,7 @@ layout = dbc.Container([
                     ),
 
                 ], style={"width": "14rem", 'margin-bottom': '10px'},
-                )], width={'size': 4, 'order': 1}),
+                )], width={'size': 4, 'order': 1}, xs=4, sm=4,),
 
             ],
             style={'justify-content': 'center'}

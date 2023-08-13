@@ -31,9 +31,9 @@ optionStyle={
 }
 
 graphstyle={
-    "height": "425px",
+    "height": "430px",
     "margin-top": "-2px",
-    'width':'895px',
+    'width':'930px',
     'margin-left':'37px'
 }
 
@@ -57,7 +57,7 @@ layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([dcc.Graph(id="emailgraph", figure={}, 
-        style=graphstyle)])
+        style=graphstyle)],xs=12, sm=12, md=12, lg=12, xl=12)
         ]),
 
      dbc.Row([

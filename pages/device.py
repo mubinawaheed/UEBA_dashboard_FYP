@@ -31,8 +31,8 @@ optionStyle={
 }
 
 graphstyle={
-    "height": "420px",
-    'width':'820px',
+    "height": "430px",
+    'width':'920px',
     'margin-left':'50px'
 }
 
@@ -93,7 +93,7 @@ def plot_graph(dataframe, xcol, ycol, title):
 )
 def plot_connect_graphs(user):
     df = pd.read_csv(f"E:\\UEBA_Notebooks\\user_files\\{user}")
-    fig = plot_graph(df, 'str_date', 'Connect', 'Count of USB connects')
+    fig = plot_graph(df, 'str_date', 'Connect', f'Count of USB connects of user {user}')
     return fig
 
 
