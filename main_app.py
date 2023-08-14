@@ -57,19 +57,21 @@ sidebar = html.Div(
 
         dbc.Nav(
             [   
-                dbc.NavLink("Home", href="/", active="exact", style=nav_style),
-                dbc.NavLink("Email Behavior", href="/emailBehavior",
-                            active="exact", style=nav_style),
-                dbc.NavLink("Logon Behavior", href="/logonBehavior",
-                            active="exact", style=nav_style),
-                dbc.NavLink("File Behavior", href="/fileBehavior",
-                            active="exact", style=nav_style),
-                dbc.NavLink("Http Behavior", href="/httpBehavior",
-                            active="exact", style=nav_style),
-                dbc.NavLink("Device Behavior", href="/deviceBehavior",
-                            active="exact", style=nav_style),
-                dbc.NavLink("Dataset Insights", href="/dataset",
-                            active="exact", style=nav_style)
+                dbc.NavLink("Home", href="/",active="exact", style=nav_style),
+
+                dbc.NavLink("Model Predictions", href="/modelPerformance",active="exact", style=nav_style),
+
+                dbc.NavLink("Email Behavior", href="/emailBehavior",active="exact", style=nav_style),
+
+                dbc.NavLink("Logon Behavior", href="/logonBehavior",active="exact", style=nav_style),
+
+                dbc.NavLink("File Behavior", href="/fileBehavior",active="exact", style=nav_style),
+
+                dbc.NavLink("Http Behavior", href="/httpBehavior", active="exact", style=nav_style),
+
+                dbc.NavLink("Device Behavior", href="/deviceBehavior", active="exact", style=nav_style),
+
+                dbc.NavLink("Dataset Insights", href="/dataset", active="exact", style=nav_style)
             ],
             vertical=True,
             pills=True,
