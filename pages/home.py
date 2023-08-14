@@ -81,13 +81,13 @@ layout = dbc.Container(
     dbc.Col(
         [html.Figure([
             html.Img(src='data:image/png;base64,{}'.format(accuracy_graph1), alt="Model Accuracy", style=graph_style1),
-            html.Figcaption("LSTM autoencoder", style=caption_style)]),
+            html.Figcaption("Autoencoders", style=caption_style)]),
         ], width=6),
 
     dbc.Col(
         [html.Figure([
             html.Img(src='data:image/png;base64,{}'.format(accuracy_graph2), alt="Model Accuracy", style=graph_style2),
-            html.Figcaption("LSTM autoencoder",style=caption_style)]),
+            html.Figcaption("Autoencoders",style=caption_style)]),
         ], width=6),
     ])
     ],
