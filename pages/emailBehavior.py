@@ -117,7 +117,7 @@ def plot_email_graph(user):
 )
 def after_hour_emails(user):
     df = pd.read_csv( f"E:\\UEBA_Notebooks\\after_hour_Email_userfiles\\{user[0:7]}_after_hour_emails.csv")
-    fig = plot_graph(df, 'date', 'After_hour_emails', f"Count of after hour emails sent by user {user[0:7]}")
+    fig = plot_graph(df, 'Date', 'After_hour_emails', f"Count of after hour emails sent by user {user[0:7]}")
     return fig
 
 
